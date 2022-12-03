@@ -1,25 +1,26 @@
 from cardDetails import cardDetails
-
+## Defining a function called print_menu. This creates a front start-up page
 def print_menu():
-    ### Print options for the user
+    ### Start menu options for the user
     print("Please choose from one of the following options...")
     print("1. Deposit")
     print("2. Withdraw")
     print("3. Show Balance")
+    print("4. Send Money")
     print("4. Exit")
 
 def deposit(cardDetails):
     try:
         deposit = float(input("How much money would you deposit:"))
         cardDetails.set_balance(cardDetails.get_balance() + deposit)
-        print("Thank you for your money. Your new balance is:", str (cardDetails.get_balance()))
+        print("Money Recieved. Your new balance is:", str (cardDetails.get_balance()))
     except:
         print("Invalid input")
 
 def withdraw(cardDetails):
     try:
         withdraw = float(input("How much money would you like to withdraw:"))
-        ##Check if user has enough money
+        ##Whenever aCheck if user has enough money
         if(cardDetails.get_balance() < withdraw):
             print ("Insufficent balance :(")
         else:
@@ -34,10 +35,10 @@ def check_balance(cardDetails):
     if __name__ == "__main__":
         current_user = cardDetails("","","","","")
 
-        ### Create a repo of cardDetails
+        ### Create a repo of cardDetails as an arrary. For a better database creating a database table to call from would be better
         list_of_cardDetails = []
-        list_of_cardDetails.append(cardDetails("47589673923215748", 2345, "Jacob", "Macon", 180.51))
-        list_of_cardDetails.append(cardDetails("47589673950215748", 2345, "Daniel", "Bacon", 170.51))
+        list_of_cardDetails.append(cardDetails("47589673923215748", 2345, "Jacob", "Stevey", 180.51))
+        list_of_cardDetails.append(cardDetails("47589673950215748", 2345, "Rogers", "Bacon", 170.51))
         list_of_cardDetails.append(cardDetails("47589673960215748", 2345, "Joshua", "Racon", 186.51))
         
         ### Prompt user for debit card number
