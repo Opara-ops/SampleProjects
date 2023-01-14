@@ -8,7 +8,7 @@ def print_menu():
     print("3. Show Balance")
     print("4. Send Money")
     print("4. Exit")
-
+### Defining the card deposit details class after card has been inputted...
 def deposit(cardDetails):
     try:
         deposit = float(input("How much money would you deposit:"))
@@ -16,7 +16,7 @@ def deposit(cardDetails):
         print("Money Recieved. Your new balance is:", str (cardDetails.get_balance()))
     except:
         print("Invalid input")
-
+### Defining the card withdraw details class after card has been inputted...
 def withdraw(cardDetails):
     try:
         withdraw = float(input("How much money would you like to withdraw:"))
@@ -28,7 +28,7 @@ def withdraw(cardDetails):
             print("You're good to go ! Thank you :)")
     except:
         print("Invalid input")
-
+### Defining the card withdraw details class after card has been inputted...
 def check_balance(cardDetails):
     print("Your current balance is:", cardDetails.get_balance())
 
@@ -37,6 +37,9 @@ def check_balance(cardDetails):
 
         ### Create a repo of cardDetails as an arrary. For a better database creating a database table to call from would be better
         list_of_cardDetails = []
+        list_of_cardDetails.append(cardDetails("47589673923215748", 2345, "Jacob", "Stevey", 180.51))
+        list_of_cardDetails.append(cardDetails("47589673950215748", 2345, "Rogers", "Bacon", 170.51))
+        list_of_cardDetails.append(cardDetails("47589673960215748", 2345, "Joshua", "Racon", 186.51))
         list_of_cardDetails.append(cardDetails("47589673923215748", 2345, "Jacob", "Stevey", 180.51))
         list_of_cardDetails.append(cardDetails("47589673950215748", 2345, "Rogers", "Bacon", 170.51))
         list_of_cardDetails.append(cardDetails("47589673960215748", 2345, "Joshua", "Racon", 186.51))
